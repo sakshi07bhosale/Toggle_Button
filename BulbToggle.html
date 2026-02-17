@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bulb On Off</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="off.png" alt="off" id="bulb">
+        <br> <br>
+        <button type="button" id="toggleBtn" onclick="toggleBulb()">
+            Turn ON
+        </button>
+    </div>
+    <script>
+        const bulbElement = document.getElementById('bulb');
+        const toggleBtn = document.getElementById('toggleBtn');
+        let state = false;
+
+        function toggleBulb() {
+            if (state == false) {
+                bulbElement.src = 'on.png';
+                toggleBtn.innerText = 'Turn OFF';
+                toggleBtn.style.backgroundColor = 'red';
+                
+                state = true;
+            }
+            else {
+                bulbElement.src = 'off.png';
+                toggleBtn.innerText = 'Turn ON';
+                toggleBtn.style.backgroundColor = 'green';
+                state = false;
+            }
+        }
+    </script>
+</body>
+</html>
